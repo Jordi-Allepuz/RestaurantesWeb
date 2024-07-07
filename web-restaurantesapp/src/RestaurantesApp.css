@@ -1,0 +1,60 @@
+.button-container {
+    text-align: center; /* Centra el contenido de texto y elementos en línea */
+    padding: 10px; /* Espacio interior del contenedor */
+    margin-top: 20px; /* Espacio exterior superior */
+}
+
+.button-container button {
+    margin: 0 auto; /* Margin automático para centrar elementos de bloque */
+    display: inline-block; /* Hace que el botón se comporte como un elemento en línea pero permitiendo dimensiones */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.img-logo {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center; /* Centra la paginación horizontalmente */
+    padding: 20px; /* Espacio alrededor de la paginación */
+}
+
+.pagination {
+    display: flex;
+    list-style-type: none; /* Remueve los estilos de lista por defecto */
+    padding: 0; /* Remueve el padding por defecto */
+}
+
+.pagination li {
+    margin: 0 5px; /* Espacio entre botones */
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+.pagination li a {
+    border: 1px solid #ccc; /* Borde para los botones */
+    padding: 5px 10px; /* Espacio dentro de los botones */
+    display: flex; /* Permite centrar el icono dentro del botón */
+    align-items: center; /* Centra verticalmente el contenido del botón */
+}
+
+.active a {
+    border-color: blue; /* Resalta el botón de la página actual */
+}
+
+.pagination li.disabled a {
+    color: #ccc; /* Deshabilita visualmente los botones no clickeables */
+    cursor: default;
+}
+
+
+
+

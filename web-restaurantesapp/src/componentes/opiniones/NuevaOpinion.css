@@ -1,0 +1,52 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    width: 60%; /* Ajusta al tamaño deseado */
+    height: 70%;
+    display: none; /* Oculto por defecto */;
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    flex-direction: column; /* Opcional: Organiza los hijos en columna */
+}
+
+
+.opinion-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.column {
+    flex: 1; /* Las columnas ocupan el espacio disponible por igual */
+    padding: 0 20px; /* Espacio interior para cada columna */
+}
+
+/* Botones y estilos adicionales */
+.button-container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

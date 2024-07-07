@@ -1,0 +1,100 @@
+.filtro-contenedor {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    /* Flex container para los filtros */
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten según el ancho disponible */
+    gap: 20px;
+    /* Espacio entre los elementos de filtro */
+}
+
+.filtro-titulo {
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background-color: black;
+    padding: 0 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.filtro-item {
+    flex-grow: 1;
+    /* Los elementos de filtro crecen para llenar el espacio disponible */
+    min-width: 160px;
+    /* Ancho mínimo para cada filtro */
+}
+
+
+
+.rest-container  {
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.rest-container:hover {
+    transform: scale(1.1);
+    /* El botón crece al 110% de su tamaño original */
+}
+
+.form-control {
+    width: 100%;
+    /* El control toma todo el ancho disponible de su contenedor */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.btn-pdf {
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.btn-pdf:hover {
+    transform: scale(1.4);
+    /* El botón crece al 110% de su tamaño original */
+}
+
+
+
+
+.spacer {
+    flex-grow: 1;
+}
+
+
+.btn-spacing {
+    margin-right: 8px;
+}
+
+
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    /* Quita el subrayado de los enlaces */
+}
+
+
+.btn:hover {
+    background-color: #0056b3;
+}
