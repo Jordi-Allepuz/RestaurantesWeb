@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Jordi-Allepuz/RestaurantesWebApp/blob/main/logo.png" alt="Main Dashboard">
+  <img src="https://github.com/Jordi-Allepuz/RestaurantesWeb/blob/main/screenshots/logo(1).png" alt="Main Dashboard">
 </p>
 <p align="center">
   <h1>Ñam Ñam Notes</h1>
@@ -18,10 +18,10 @@
 ## Screenshots
 
 ### Login Page
-![Login Page](https://github.com/Jordi-Allepuz/RestaurantesWebApp/blob/main/Screenshot%202024-06-20%20at%2017-40-49%20%C3%91am%C3%B1am%20Notes.png)
+![Login Page](https://github.com/Jordi-Allepuz/RestaurantesWeb/blob/main/screenshots/Screenshot_login.png)
 
 ### Main Dashboard
-![Main Dashboard](https://github.com/Jordi-Allepuz/RestaurantesWebApp/blob/main/Screenshot%202024-06-20%20at%2017-41-16%20%C3%91am%C3%B1am%20Notes.png)
+![Main Dashboard](https://github.com/Jordi-Allepuz/RestaurantesWeb/blob/main/screenshots/Screenshot%20(2).png)
 
 ### Restaurant Details View
-![Restaurant Details](https://github.com/Jordi-Allepuz/RestaurantesWebApp/blob/main/Screenshot%202024-06-20%20at%2017-41-32%20%C3%91am%C3%B1am%20Notes.png)
+![Restaurant Details](https://github.com/Jordi-Allepuz/RestaurantesWeb/blob/main/screenshots/Screenshot%20(1).png)
