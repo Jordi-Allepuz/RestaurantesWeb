@@ -1,5 +1,6 @@
 package com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
@@ -7,37 +8,58 @@ import java.util.Date;
 
 @Entity
 @Table(name = "comentarios")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Comentario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Nullable
     @Column(name = "id_restaurante")
     private Long idRestaurante;
+
     @Nullable
     @Column(name = "id_usuario")
     private Long idUsuario;
+
     @Nullable
     private String comentario;
+
     @Nullable
     private int puntuacion;
+
     @Nullable
-    private String localizacion;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "localizacion")
+    private TipoLocalizacion localizacion;
+
     @Nullable
-    @Column(name = "aparcar")
-    private Long aparcar;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "aparcar")
+    private TipoAparcar aparcar;
+
     @Nullable
     private String precio;
+
     @Nullable
-    private String menu;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menu")
+    private TipoMenu menu;
+
     @Nullable
-    private String carta;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "carta")
+    private TipoCarta carta;
+
     @Nullable
     @Column(name = "platos_favoritos")
     private String platosFavoritos ;
+
     @Nullable
-    private int servicio;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "servicio")
+    private TipoServicio servicio;
 
 
     public void setId(Long id) {
@@ -81,19 +103,11 @@ public class Comentario {
     }
 
     @Nullable
-    public String getLocalizacion() {
-        return localizacion;
-    }
-
-    public void setLocalizacion( String localizacion) {
-        this.localizacion = localizacion;
-    }
-
-    public Long getAparcar() {
+    public TipoAparcar getAparcar() {
         return aparcar;
     }
 
-    public void setAparcar(Long aparcar) {
+    public void setAparcar(@Nullable TipoAparcar aparcar) {
         this.aparcar = aparcar;
     }
 
@@ -107,24 +121,6 @@ public class Comentario {
     }
 
     @Nullable
-    public String getMenu() {
-        return menu;
-    }
-
-    public void setMenu( String menu) {
-        this.menu = menu;
-    }
-
-    @Nullable
-    public String getCarta() {
-        return carta;
-    }
-
-    public void setCarta( String carta) {
-        this.carta = carta;
-    }
-
-    @Nullable
     public String getPlatosFavoritos() {
         return platosFavoritos;
     }
@@ -133,11 +129,39 @@ public class Comentario {
         this.platosFavoritos = platosFavoritos;
     }
 
-    public int getServicio() {
+    @Nullable
+    public TipoLocalizacion getLocalizacion() {
+        return localizacion;
+    }
+
+    public void setLocalizacion(@Nullable TipoLocalizacion localizacion) {
+        this.localizacion = localizacion;
+    }
+
+    @Nullable
+    public TipoMenu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(@Nullable TipoMenu menu) {
+        this.menu = menu;
+    }
+
+    @Nullable
+    public TipoCarta getCarta() {
+        return carta;
+    }
+
+    public void setCarta(@Nullable TipoCarta carta) {
+        this.carta = carta;
+    }
+
+    @Nullable
+    public TipoServicio getServicio() {
         return servicio;
     }
 
-    public void setServicio(int servicio) {
+    public void setServicio(@Nullable TipoServicio servicio) {
         this.servicio = servicio;
     }
 }

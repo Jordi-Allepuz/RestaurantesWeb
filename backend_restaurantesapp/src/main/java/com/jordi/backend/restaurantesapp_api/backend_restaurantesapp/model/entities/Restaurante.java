@@ -1,5 +1,6 @@
 package com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -8,30 +9,46 @@ import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name = "restaurantes")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Restaurante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Nullable
     private String nombre;
+
     @Nullable
     private String direccion;
+
     @Nullable
     private String localidad;
+
     @Nullable
     private String telefono;
+
     @Nullable
-    @Column(name = "estilo_restaurante")
-    private Long estiloRestaurante;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "estilo_restaurante")
+    private EstiloRestaurante estiloRestaurante;
+
     @Nullable
-    @Column(name = "tipo_reserva")
-    private Long reserva;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tipo_reserva")
+    private TipoReserva reserva;
+
     @NotNull
     private Boolean activo=true;
+
     @Nullable
-    @Column(name = "estado_restaurante")
-    private Long estadoRestaurante;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "estado_restaurante")
+    private EstadoRestaurante estadoRestaurante;
+
+    @Nullable
+    @Column(name = "imagen")
+    private String imagen;
 
     public Long getId() {
         return id;
@@ -73,19 +90,19 @@ public class Restaurante {
         this.telefono = telefono;
     }
 
-    public Long getEstiloRestaurante() {
+    public EstiloRestaurante getEstiloRestaurante() {
         return estiloRestaurante;
     }
 
-    public void setEstiloRestaurante(Long estiloRestaurante) {
+    public void setEstiloRestaurante(EstiloRestaurante estiloRestaurante) {
         this.estiloRestaurante = estiloRestaurante;
     }
 
-    public Long getReserva() {
+    public TipoReserva getReserva() {
         return reserva;
     }
 
-    public void setReserva(Long reserva) {
+    public void setReserva(TipoReserva reserva) {
         this.reserva = reserva;
     }
 
@@ -97,12 +114,20 @@ public class Restaurante {
         this.activo = activo;
     }
 
-    public Long getEstadoRestaurante() {
+    public EstadoRestaurante getEstadoRestaurante() {
         return estadoRestaurante;
     }
 
-    public void setEstadoRestaurante(Long estadoRestaurante) {
+    public void setEstadoRestaurante(EstadoRestaurante estadoRestaurante) {
         this.estadoRestaurante = estadoRestaurante;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
 

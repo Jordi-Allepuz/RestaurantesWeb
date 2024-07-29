@@ -1,9 +1,13 @@
 package com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.controller;
 
+import com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.model.dto.UserDto;
 import com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.model.entities.Restaurante;
 import com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.service.intf.RestauranteServiceIntf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,12 +39,29 @@ public class RestauranteController implements WebMvcConfigurer {
 //        return restauranteService.findAll();
 //    }
 
-    @GetMapping
-    public ResponseEntity<List<Restaurante>> findAll(
+    // @GetMapping("/page/{page}")
+    // public Page<Restaurante> list(@PathVariable Integer page) {
+    //     Pageable pageable = PageRequest.of(page, 6);
+    //     return restauranteService.findAll(pageable);
+    // }
+
+    // @GetMapping
+    // public ResponseEntity<List<Restaurante>> findAll(
+    //         @RequestParam(required = false) Long estadoRestaurante,
+    //         @RequestParam(required = false) Long estiloRestaurante,
+    //         @RequestParam(required = false) String nombre) {
+    //     List<Restaurante> restaurantes = restauranteService.findAllFiltered(estadoRestaurante, estiloRestaurante, nombre);
+    //     return ResponseEntity.ok(restaurantes);
+    // }
+
+    @GetMapping("/page/{page}")
+    public ResponseEntity<Page<Restaurante>> findAll(
             @RequestParam(required = false) Long estadoRestaurante,
             @RequestParam(required = false) Long estiloRestaurante,
-            @RequestParam(required = false) String nombre) {
-        List<Restaurante> restaurantes = restauranteService.findAllFiltered(estadoRestaurante, estiloRestaurante, nombre);
+            @RequestParam(required = false) String nombre,
+            @PathVariable Integer page) {
+        Pageable pageable = PageRequest.of(page, 6);
+        Page<Restaurante> restaurantes = restauranteService.findAllFiltered(estadoRestaurante, estiloRestaurante, nombre, pageable);
         return ResponseEntity.ok(restaurantes);
     }
 

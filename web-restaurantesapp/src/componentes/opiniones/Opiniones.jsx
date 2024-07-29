@@ -31,9 +31,10 @@ export const Opiniones = () => {
 
 
     const obtenerComentario = () => {
-        comentarioService.obtenerComentarioUsuarioRestaurante(idRestaurante, 2)
+        comentarioService.obtenerComentarioUsuarioRestaurante(idRestaurante, 4)
             .then(data => { setComentario(data); })
             .catch(error => { console.error('Error al obtener los comentarios:', error); });
+            console.log(comentario.tipoAparcar);
     }
 
 

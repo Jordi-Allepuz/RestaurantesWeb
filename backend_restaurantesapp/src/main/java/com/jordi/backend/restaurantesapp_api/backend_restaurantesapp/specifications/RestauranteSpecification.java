@@ -13,7 +13,7 @@ public class RestauranteSpecification {
 
     public static Specification<Restaurante> hasEstilo(Long estilo) {
         return (root, query, criteriaBuilder) ->
-                estilo == null ? criteriaBuilder.conjunction() : criteriaBuilder.equal(root.get("estiloRestaurante"), estilo);
+                estilo == null ? criteriaBuilder.conjunction() : criteriaBuilder.equal(root.get("estiloRestaurante").get("id"), estilo);
     }
 
     public static Specification<Restaurante> hasNombre(String nombre) {

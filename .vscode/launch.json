@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BackendRestaurantesappApplication<backend_restaurantesapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.jordi.backend.restaurantesapp_api.backend_restaurantesapp.BackendRestaurantesappApplication",
+            "projectName": "backend_restaurantesapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

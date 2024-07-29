@@ -25,6 +25,6 @@ class TipoAparcarServiceImpl implements TipoAparcarServiceIntf {
     @Override
     @Transactional(readOnly = true)
     public Optional<TipoAparcar> findById(Long id) {
-        return  tipoAparcarRepository.findById(id);
+        return tipoAparcarRepository.findById(id);
     }
 }

@@ -13,6 +13,7 @@ export class ComentarioService extends Component {
     }
 
     obtenerComentarioUsuarioRestaurante(idRestaurante, idUsuario) {
+        console.log(idRestaurante, idUsuario)
         return fetchWithAuth(`http://localhost:8080/api/comentarios/restaurante/${idRestaurante}/usuario/${idUsuario}`)
             .then(res => res.json())
             .catch(error => {
